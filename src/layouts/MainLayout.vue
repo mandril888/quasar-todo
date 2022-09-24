@@ -9,9 +9,7 @@
           icon="menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
-        <div
-          class="q-px-lg qpt-xl q-mb-md q-mt-md row justify-between items-center w-100"
-        >
+        <div class="q-px-lg q-my-md row justify-between items-center w-100">
           <div class="text-h3">ToDo</div>
           <div class="text-subtitle1">{{ todaysDate }}</div>
         </div>
@@ -34,14 +32,15 @@
         "
       >
         <q-list padding>
-          <q-item clickable v-ripple>
+          <!-- ?? qué hace 'exact'? -->
+          <q-item to="/" exact clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="list" />
             </q-item-section>
             <q-item-section> ToDo </q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple>
+          <q-item to="/help" exact clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="help" />
             </q-item-section>
@@ -66,11 +65,10 @@
     </q-drawer>
 
     <q-page-container>
+      <!-- <keep-alive></keep-alive> -->
       <!-- ?? qué hace esto exactamente -->
       <!-- -> mantiene los cambios cuando nos movemos entre las páginas -->
-      <keep-alive>
-        <router-view />
-      </keep-alive>
+      <router-view />
     </q-page-container>
   </q-layout>
 </template>
