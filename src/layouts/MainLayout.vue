@@ -40,6 +40,13 @@
             <q-item-section> ToDo </q-item-section>
           </q-item>
 
+          <q-item to="/add" exact clickable v-ripple>
+            <q-item-section avatar>
+              <q-icon name="style" />
+            </q-item-section>
+            <q-item-section> Add tasks </q-item-section>
+          </q-item>
+
           <q-item to="/help" exact clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="help" />

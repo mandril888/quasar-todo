@@ -24,10 +24,4 @@
   </q-page>
 </template>
 
-<script setup>
-// import { defineComponent } from "vue";
-
-// export default defineComponent({
-//   name: "HelpMe",
-// });
-</script>
+<script setup></script>
