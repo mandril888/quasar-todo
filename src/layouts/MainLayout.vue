@@ -33,21 +33,21 @@
       >
         <q-list padding>
           <!-- ?? qué hace 'exact'? -->
-          <q-item to="/" exact clickable v-ripple>
+          <q-item :to="{ name: 'home' }" exact clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="list" />
             </q-item-section>
             <q-item-section> ToDo </q-item-section>
           </q-item>
 
-          <q-item to="/add" exact clickable v-ripple>
+          <q-item :to="{ name: 'add' }" exact clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="style" />
             </q-item-section>
             <q-item-section> Add tasks </q-item-section>
           </q-item>
 
-          <q-item to="/help" exact clickable v-ripple>
+          <q-item :to="{ name: 'help' }" exact clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="help" />
             </q-item-section>

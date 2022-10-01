@@ -3,9 +3,17 @@ const routes = [
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
     children: [
-      { path: "", component: () => import("pages/ToDo.vue") },
-      { path: "/add", component: () => import("pages/AddTasks.vue") },
-      { path: "/help", component: () => import("pages/HelpMe.vue") },
+      { path: "", name: "home", component: () => import("pages/ToDo.vue") },
+      {
+        path: "/add",
+        name: "add",
+        component: () => import("pages/AddTasks.vue"),
+      },
+      {
+        path: "/help",
+        name: "help",
+        component: () => import("pages/HelpMe.vue"),
+      },
     ],
   },
 

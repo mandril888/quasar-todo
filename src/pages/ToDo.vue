@@ -5,7 +5,7 @@
       <q-item
         class="bg-white q-my-sm"
         :class="{ 'done bg-green-2': task.done }"
-        v-for="(task, index) in tasks.tasks"
+        v-for="(task, index) in $tasksStore.tasks.tasks"
         :key="task.title"
         @click="task.done = !task.done"
         clickable
@@ -37,32 +37,13 @@
 </template>
 
 <script setup>
-// import { defineComponent } from "vue";
-
-// export default defineComponent({
-//   name: "ToDo",
-// });
 import { reactive } from "vue";
 import { useQuasar } from "quasar";
+import { useTasksStore } from "../stores/tasks";
 
 const $q = useQuasar();
 
-const tasks = reactive({
-  tasks: [
-    {
-      title: "Task A",
-      done: false,
-    },
-    {
-      title: "Task B",
-      done: false,
-    },
-    {
-      title: "Task C",
-      done: false,
-    },
-  ],
-});
+const $tasksStore = useTasksStore();
 
 function deleteTask(element) {
   $q.dialog({
@@ -71,7 +52,7 @@ function deleteTask(element) {
     cancel: true,
     persistent: true,
   }).onOk(() => {
-    tasks.tasks.splice(element, 1);
+    $tasksStore.tasks.tasks.splice(element, 1);
     $q.notify({
       message: "Task deleted",
       color: "primary",
